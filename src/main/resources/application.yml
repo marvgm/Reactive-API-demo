@@ -1,0 +1,22 @@
+spring:
+  r2dbc:
+    url: r2dbc:pool:mysql://${DB_HOST}/${DB_NAME}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    pool:
+      max-size: '500'
+      initial-size: '100'
+      max-idle-time: 30m
+      validation-query: SELECT 1
+
+springdoc:
+  api-docs:
+    path: /swagger-doc/v3/api-docs
+    groups:
+      enabled: 'true'
+  swagger-ui:
+    path: /swagger-doc/swagger-ui.html
+
+server:
+  error:
+    include-message: always
